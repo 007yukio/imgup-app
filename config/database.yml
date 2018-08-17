@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # 日本語を扱うためには、encodingを、unicodeに設定する必要があります。encodingをunicodeにするためには、templateとして、template0を指定する必要があります
+  # これはCloud9特有の設定です。
+  template: template0
+  
+development:
+  <<: *default
+  database: imgupadd0813_development
+
+test:
+  <<: *default
+  database: imgupadd0813_test
+
+production:
+  <<: *default
+  database: imgupadd0813_production
+  username: imgupadd0813
+  password: <%= ENV['IMGUPADD0813_DATABASE_PASSWORD'] %>

@@ -1,0 +1,23 @@
+<h1>ブログ一覧</h1>
+<p><%= notice %><%= alert %></p>
+
+<div>
+  <% @blogs.each do |blog| %>
+  <section class="box1">
+    <%= link_to 'show', blog_path(blog.id) %>
+    <%= link_to "edit", edit_blog_path(blog.id) %>
+    <%= link_to 'delete', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }%>
+  </section>
+  
+  <p>name</p>
+    <%= blog.name %>
+  
+  <p  class="box2"><%= image_tag blog.image %></>
+  <h3>content</h3>
+    <%= blog.content %>
+
+
+  <% end %>
+</div>
+<br>
+<%= link_to '新しくブログを投稿する', new_blog_path %>
