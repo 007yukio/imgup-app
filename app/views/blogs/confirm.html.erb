@@ -1,7 +1,5 @@
-<h3>以下の内容で、更新する。</h3>
-<h1>Confirm</h1>
-<p>Find me in app/views/blogs/confirm.html.erb</p>
-
+<h1 class="blog-new">Confirm</h1>
+<div class="box1-blogs-index">
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :image_cache %>
   <%= form.hidden_field :name %>
