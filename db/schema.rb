@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180817015304) do
+ActiveRecord::Schema.define(version: 20180820022659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20180817015304) do
     t.string "name"
     t.string "content"
     t.string "image"
+    t.integer "user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "blog_id"
+    t.integer "icon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
+    t.integer "image_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180817015304) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "icon"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

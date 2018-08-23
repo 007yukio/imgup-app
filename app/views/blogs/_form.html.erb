@@ -16,7 +16,6 @@
     <%= form.label :image %>
     <p><%= image_tag(@blog.image.url) if @blog.image.url %></p>
     <%= form.file_field :image, id: :feed_image %>
-
   </div>
 
   <div class="blog_title">

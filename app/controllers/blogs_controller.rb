@@ -7,12 +7,18 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog = Blog.new
+    if params[:back]
+      @blog = Blog.new(blog_params)
+    else
+      @blog = Blog.new
+    end
   end
 
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     if @blog.save
+      ContactMailer.contact_mail(@blog).deliver
       redirect_to blogs_path,notice:"作成しました！"
     else
       render 'new'
@@ -20,7 +26,9 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.find(params[:id])
+    #@blog = Blog.find(params[:id])
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
+    #@favorite = current_user.favorites.find_by(image_id: @image.id)
   end
 
   def edit
@@ -43,6 +51,8 @@ class BlogsController < ApplicationController
   
   def confirm
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
+    render :new if @blog.invalid?
   end
   
   private

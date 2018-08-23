@@ -3,16 +3,23 @@
 
 <div>
   <% @blogs.each do |blog| %>
+  
   <section class="box1">
+    
     <%= link_to 'show', blog_path(blog.id) %>
-    <%= link_to "edit", edit_blog_path(blog.id) %>
-    <%= link_to 'delete', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }%>
+    
+    <% if blog.user_id == current_user.id %>
+      <%= link_to "edit", edit_blog_path(blog.id) %>
+      <%= link_to 'delete', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }%>
+    <% end %>
   </section>
   
   <p>name</p>
     <%= blog.name %>
   
-  <p  class="box2"><%= image_tag blog.image %></>
+  <p>img</p>
+    <%= image_tag blog.image %>
+  
   <h3>content</h3>
     <%= blog.content %>
 

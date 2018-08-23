@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     
     def create
         @user = User.new(user_params)
+        #@user.user_id = current_user.id
         if @user.save
             #redirect_to blogs_path(@user.id)
             #redirect_to user_path(@user.id)
