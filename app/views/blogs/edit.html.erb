@@ -1,5 +1,5 @@
-<h1>Blogs#edit</h1>
-
+<h1 class="favorite-top">Edit</h1>
+<div class="box1-blogs-index">
 <%= form_with(model: @blog, local: true) do |form| %>
 
 <% if @blog.errors.any? %>
@@ -14,19 +14,18 @@
 <% end %>
 
   <div>
-    <%= @blog.image %>
     <%= form.label :image %>
     <p><%= image_tag(@blog.image.url) if @blog.image.url %></p>
     <%= form.file_field :image, id: :feed_image %>
   </div>
   
   <div class="blog_title">
-    <%= form.label :name %><br>
+    <%= form.label :Title %><br>
     <%= form.text_field :name %>
   </div>
   
   <div class="blog_title">
-    <%= form.label :content %><br>
+    <%= form.label :Memo %><br>
     <%= form.text_field :content %>
   </div>
 
@@ -35,3 +34,4 @@
   </div>
 
 <% end %>
+<br>

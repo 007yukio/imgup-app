@@ -1,28 +1,19 @@
 <div>
-  <div  >
-    <h1>Favorite</h1>
-      <section>
+  <div>
+    <h1 class="favorite-top">Favorite</h1>
+      <div class="box1-blogs-index">
         <% if @favorite_blogs.present? %>
             <% @favorite_blogs.each do |t| %>
-            
               <div>
-                <p>img: <%= t.image %></p>
+                <p>img</p>
                 <%= image_tag t.image %>
-                
-                <p>メールアドレス: <%= @user.email %></p>
-                
-                <p>writer：<%= t.user.name %></p>
-                
-                <p>内容：<%= t.content %></p>
+                <p>Writer：<%= t.user.name %></p>
+                <p>Title:<%= t.name %></p>
+                <p>Memo：<%= t.content %></p>
               </div>
-              
             <% end %>
-            
         <% end %>
-        
-      </section>
-      
-  </div>
-  
-  <%= link_to "一覧画面にもどる", blogs_path %>
+      <div class="user-top"><%= link_to "back", blogs_path %></div>    
+    </div>
 </div>
+<br>

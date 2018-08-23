@@ -1,11 +1,10 @@
-<h1><%= @user.name %>のページ</h1>
-
-<p>メールアドレス: <%= @user.email %></p>
-
-<h3>icon</h3>
-<%= image_tag @user.icon %>
-</div>
+<h1 class="user-top"><%= @user.name %>のページ</h1>
+    <div class="box1-blogs-index">
+        <p>E-mail: <%= @user.email %></p>
+        <h3>icon</h3>
+        <%= image_tag @user.icon %>
+        <br>
+        <p><%= link_to "back to LIST", blogs_path %></p>
+        <p><%= link_to 'go to favorites', favorites_path %></p>
+    </div>
 <br>
-
-<p><%= link_to "一覧画面にもどる", blogs_path %></p>
-<p><%= link_to 'お気に入り一覧へ', favorites_path %></p>

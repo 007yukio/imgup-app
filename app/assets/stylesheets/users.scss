@@ -1,6 +1,16 @@
-.top {
-background: -webkit-linear-gradient(#FFF, #FFC778 30%, #F89174 60%, #748af8);
-background: -moz-linear-gradient(#FFF, #FFC778 30%, #F89174 60%, #748af8);
-background: -o-linear-gradient(#FFF, #FFC778 30%, #F89174 60%, #748af8);
-background: linear-gradient(#FFF, #FFC778 30%, #F89174 60%, #748af8);
+body {
+margin:0;
+background: #833ab4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 } 
+
+
+.user-top {
+    color: #f0ffff; /* 文字色 */
+    margin: 0 auto;
+    width: 20%;
+    padding-top: 1%;
+    font-size: 25px;
+    font-family: "Comic Sans MS";
+}

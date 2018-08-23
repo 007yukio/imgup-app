@@ -1,4 +1,4 @@
-<h1>Blogs#_form</h1>
+<div class="box1-blogs-index">
 <%= form_with(model: @blog, local: true ,url: confirm_blogs_path ) do |form| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
@@ -19,16 +19,18 @@
   </div>
 
   <div class="blog_title">
-    <%= form.label :name %>
+    <%= form.label :Title %>
+    <br>
     <%= form.text_field :name %>
   </div>
   
   <div class="blog_title">
-    <%= form.label :content %>
+    <%= form.label :Memo %>
+    <br>
     <%= form.text_field :content %>
   </div>
   <br>
   <%= form.submit %>
 <% end %>
-
-<%= link_to "ブログ一覧画面にもどる", blogs_path %>
+<%= link_to "back to LIST", blogs_path %>
+<br>

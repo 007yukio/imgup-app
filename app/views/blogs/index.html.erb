@@ -1,30 +1,29 @@
-<h1>ブログ一覧</h1>
+<h1 class="user-top">Instant Telegram</h1>
+<div class="box1-blogs-index">
+<h1>LIST</h1>
+<h1><%= link_to 'new create!!', new_blog_path %></h1>
 <p><%= notice %><%= alert %></p>
 
 <div>
   <% @blogs.each do |blog| %>
   
-  <section class="box1">
-    
+  <div class="box1-blogs-list">
     <%= link_to 'show', blog_path(blog.id) %>
-    
     <% if blog.user_id == current_user.id %>
       <%= link_to "edit", edit_blog_path(blog.id) %>
       <%= link_to 'delete', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }%>
     <% end %>
-  </section>
+  </div>
   
-  <p>name</p>
+  <h2>Title</h2>
     <%= blog.name %>
-  
-  <p>img</p>
     <%= image_tag blog.image %>
-  
-  <h3>content</h3>
+  <h2>Memo</h2>
     <%= blog.content %>
-
-
   <% end %>
+  <br>
+
+</div>
+
 </div>
 <br>
-<%= link_to '新しくブログを投稿する', new_blog_path %>

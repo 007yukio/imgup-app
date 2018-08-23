@@ -1,16 +1,17 @@
-.box1 {
- margin: 2em auto; 
+.box1-blogs {
  padding: 1em 1.5em;
- width: 90%; /*幅の調節*/
+ padding-top: 1%;
+ width: 20%;
  color: #777777; /* 文字色 */
  background-color: #fff; /* 背景色 */
  border: 4px solid #f6bfbc; /*線の太さ・色*/
  border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+ border: solid 3px #000000;
  font-size: 20px;
+ font-weight: bold;
  font-family: "Comic Sans MS";
+ margin: 0 auto;
 }
-
-
 
 .box2 {
  margin: 2em auto;  
@@ -20,4 +21,43 @@
  background-color: #f7f7f7; /*背景色*/
  border: 2px solid #ccc; /*線の太さ・色*/
  border-radius: 8px; /*角の丸み*/ 
+}
+
+.box1-blogs-index {
+ padding: 1em 1.5em;
+ padding-top: 1%;
+ width: 26%;
+ color: #777777; /* 文字色 */
+ background-color: #fff; /* 背景色 */
+ border: 4px solid #f6bfbc; /*線の太さ・色*/
+ border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+ border: solid 3px #000000;
+ font-size: 20px;
+ font-weight: bold;
+ font-family: "Comic Sans MS";
+ margin: 0 auto;
+}
+
+.box1-blogs-list {
+ padding: 1em 1.5em;
+ padding-top: 1%;
+ width: 55%;
+ color: #777777; /* 文字色 */
+ background-color: #fff; /* 背景色 */
+ border: 4px solid #f6bfbc; /*線の太さ・色*/
+ border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+ border: solid 3px #000000;
+ font-size: 20px;
+ font-weight: bold;
+ font-family: "Comic Sans MS";
+ margin: 0 auto;
+}
+
+.blog-new {
+    color: #f0ffff; /* 文字色 */
+    margin: 0 auto;
+    width: 20%;
+    padding-top: 1%;
+    font-size: 40px;
+    font-family: "Comic Sans MS";
 }
